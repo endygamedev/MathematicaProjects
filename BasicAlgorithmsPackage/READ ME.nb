@@ -1,0 +1,693 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28698,        685]
+NotebookOptionsPosition[     26667,        640]
+NotebookOutlinePosition[     27063,        656]
+CellTagsIndexPosition[     27020,        653]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+\:041a\:0430\:043a \:043f\:043e\:043b\:044c\:0437\:043e\:0432\:0430\:0442\
+\:044c\:0441\:044f \:043f\:0430\:043a\:0435\:0442\:043e\:043c \
+\[OpenCurlyDoubleQuote]BasicAlgorithmsPackage`\[CloseCurlyDoubleQuote] \:0432 \
+Wolfram Mathematica:\
+\>", "Title",
+ Editable->False,
+ CellChangeTimes->{{3.7944846552580843`*^9, 3.7944846708640704`*^9}, {
+   3.7944850959268064`*^9, 3.7944851024204454`*^9}, {3.794485242536191*^9, 
+   3.794485266867292*^9}, 
+   3.7944854521291313`*^9},ExpressionUUID->"9ff4c3f5-0877-44c0-acf1-\
+626877f58c78"],
+
+Cell[CellGroupData[{
+
+Cell["\:0418\:043c\:043f\:043e\:0440\:0442 \:043f\:0430\:043a\:0435\:0442\
+\:0430:", "Section",
+ Editable->False,
+ CellChangeTimes->{{3.79448478031324*^9, 
+  3.794484791175145*^9}},ExpressionUUID->"e96c23e1-9a35-4176-b06a-\
+02a38cbfc298"],
+
+Cell["\<\
+\:0412 \:043d\:0430\:0447\:0430\:043b\:0435 \:043d\:0443\:0436\:043d\:043e \
+\:0438\:043c\:043f\:043e\:0440\:0442\:0438\:0440\:043e\:0432\:0430\:0442\:044c\
+ \:044d\:0442\:043e\:0442 \:043f\:0430\:043a\:0435\:0442 \:043f\:0440\:0438 \
+\:043f\:043e\:043c\:043e\:0449\:0438 Get (<<<) \:0438\:043b\:0438 Needs, \
+\:043a\:0430\:043a \:044d\:0442\:043e \:043f\:0440\:043e\:0434\:0435\:043c\
+\:043e\:043d\:0441\:0442\:0440\:0438\:0440\:043e\:0432\:0430\:043d\:043e \
+\:0432 \:0441\:043b\:0435\:0434\:0443\:044e\:0449\:0435\:043c \:043f\:0440\
+\:0438\:043c\:0435\:0440\:0435 (\:043a\:043e\:043d\:0435\:0447\:043d\:043e \
+\:043d\:0430\:0434\:043e \:0432\:0432\:0435\:0441\:0442\:0438 \:0441\:0432\
+\:043e\:0451 \:0440\:0430\:0441\:043f\:043e\:043b\:043e\:0436\:0435\:043d\
+\:0438\:0435 \:0444\:0430\:0439\:043b\:0430): \
+\>", "Text",
+ Editable->False,
+ CellChangeTimes->{{3.794484680963023*^9, 3.794484770371806*^9}, {
+  3.7944848025627055`*^9, 3.794484804061701*^9}, {3.794484982472331*^9, 
+  3.794484986955369*^9}, {3.7944853009232073`*^9, 
+  3.7944853248830976`*^9}},ExpressionUUID->"dc689706-e95a-4bd8-b26a-\
+751bdd5a7cd4"],
+
+Cell[BoxData[
+ RowBox[{"<<", 
+  "\"\<D:\\\\_USER\\\\Desktop\\\\BasicAlgorithmsPackage.m\>\""}]], "Input",
+ Editable->False,
+ CellChangeTimes->{{3.794483498969116*^9, 3.7944835124428988`*^9}, {
+   3.794485283468872*^9, 3.7944852839117217`*^9}, 3.794485463385974*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"6027a1f0-1f22-4408-95a8-43ba2ed93ad6"],
+
+Cell[TextData[{
+ StyleBox["\:0412 \:0444\:0430\:0439\:043b \:043a\:0443\:0434\:0430 \:0432\
+\:044b \:0438\:043c\:043f\:043e\:0440\:0442\:0438\:0440\:0443\:0435\:0442\
+\:0435 \:043d\:0435 \:0434\:043e\:043b\:0436\:043d\:043e \:0431\:044b\:0442\
+\:044c \:0444\:0443\:043d\:043a\:0446\:0438\:0439 \:0441 \:0438\:043c\:0435\
+\:043d\:0430\:043c\:0438, \:043a\:043e\:0442\:043e\:0440\:044b\:0435 \:0438\
+\:043c\:0435\:044e\:0442\:0441\:044f \:0432 \:043f\:0430\:043a\:0435\:0442\
+\:0435.",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["\:0411\:0443\:0434\:044c\:0442\:0435 \
+\:0432\:043d\:0438\:043c\:0430\:0442\:0435\:043b\:044c\:043d\:044b!!!",
+  FontWeight->"Bold",
+  FontSlant->"Italic"]
+}], "Text",
+ Editable->False,
+ CellChangeTimes->{{3.7944848077029276`*^9, 
+  3.7944848565083523`*^9}},ExpressionUUID->"86c96de8-4205-4f86-a405-\
+1d215aba3db4"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\:0421\:043f\:0438\:0441\:043e\:043a \:0444\:0443\:043d\:043a\:0446\
+\:0438\:0439 \:0438 \:0434\:043e\:043a\:0443\:043c\:0435\:043d\:0442\:0430\
+\:0446\:0438\:044f:", "Section",
+ Editable->False,
+ CellChangeTimes->{{3.794484866162524*^9, 
+  3.7944848814626083`*^9}},ExpressionUUID->"d2135de0-6608-40c2-9d41-\
+3707cab8b492"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "BasicAlgorithmsPackage`*"}]], "Input",
+ Editable->False,
+ CellChangeTimes->{{3.7944835497013235`*^9, 3.794483576057849*^9}, 
+   3.794485467980744*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"db349ee3-61cc-4253-8926-a29b32bd0583"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["BasicAlgorithmsPackage`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], " ", 
+              
+              StyleBox["BasicAlgorithmsPackage`", 
+               "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["bFlow", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "bFlow", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["cyclicGraphQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "cyclicGraphQ", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FloydWarsall", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "FloydWarsall", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["graphCut", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "graphCut", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["insertSort", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "insertSort", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mergeP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "mergeP", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Prim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "Prim", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["subsetsR", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "subsetsR", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vertexLevelRec", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "vertexLevelRec", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["bfsPath", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "bfsPath", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Dijkstra", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "Dijkstra", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FordFulkerson", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "FordFulkerson", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["heapQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "heapQ", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Kruscal", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "Kruscal", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mergeSort", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "mergeSort", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["scanBreadth", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "scanBreadth", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["subsetsRGC", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "subsetsRGC", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["bstRoot", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "bstRoot", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["EdmondsKarp", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "EdmondsKarp", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["fromChildsToParents", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "fromChildsToParents", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["height", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "height", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["leaves", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "leaves", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["minKey", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "minKey", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["scanDepth", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "scanDepth", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["treeRoot", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "treeRoot", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["bubbleSort", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "bubbleSort", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["findShortestPath", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "findShortestPath", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["fromParentsToChilds", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "fromParentsToChilds", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["insertHeap", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "insertHeap", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxSort", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "maxSort", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["pathToRoot", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "pathToRoot", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["searchKeyBST", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "searchKeyBST", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vertexLevel", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7db1a2cc-6cd0-4aa6-a5c5-dd32618c1420", {
+                   "vertexLevel", "BasicAlgorithmsPackage`"}, False},
+                 ButtonNote->"BasicAlgorithmsPackage`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.10555555555555554`]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ Editable->False,
+ CellChangeTimes->{{3.794483554067905*^9, 3.794483577231163*^9}, {
+  3.79448546977192*^9, 3.7944854995492506`*^9}},
+ CellLabel->"Out[5]=",ExpressionUUID->"ec6f3f3c-6dd7-41d7-a790-d28159de4eb3"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["\:0422\:0430\:043a \:0436\:0435 \:043c\:043e\:0436\
+\:0435\:0442\:0435 \:043e\:0442\:043a\:0440\:044b\:0442\:044c \:044d\:0442\
+\:043e\:0442 \:043f\:0430\:043a\:0435\:0442 \:0438 \:0434\:043e\:0431\:0430\
+\:0432\:0438\:0442\:044c \:043d\:043e\:0432\:044b\:0435 \:0444\:0443\:043d\
+\:043a\:0446\:0438\:0438 \:043d\:0430 \:0441\:0432\:043e\:0451 \:0443\:0441\
+\:043c\:043e\:0442\:0440\:0435\:043d\:0438\:0435.",
+ FontVariations->{"Underline"->True}]], "Text",
+ Editable->False,
+ CellChangeTimes->{{3.794485039853718*^9, 
+  3.7944850668296366`*^9}},ExpressionUUID->"97a2191d-28fa-431e-babc-\
+988b76a97b04"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\:041f\:0440\:0438\:043c\:0435\:0440\:044b \:043d\:0435\:043a\:043e\
+\:0442\:043e\:0440\:044b\:0445 \:0444\:0443\:043d\:043a\:0446\:0438\:0439:", \
+"Section",
+ Editable->False,
+ CellChangeTimes->{{3.7944848920812063`*^9, 
+  3.794484898855049*^9}},ExpressionUUID->"d42cbd33-c490-44a5-97d8-\
+9fdcb993b0fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", " ", "=", " ", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "20"}], "}"}], ",", "20"}], "]"}]}]], "Input",
+ Editable->False,
+ CellChangeTimes->{{3.7944841705915823`*^9, 3.7944841841882133`*^9}, {
+  3.794484440255699*^9, 3.7944844691467953`*^9}, {3.79448521570443*^9, 
+  3.794485216249979*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"1bdf7c09-afd8-4053-a947-03624a598c4b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2", ",", "19", ",", "18", ",", "2", ",", "14", ",", "11", ",", "10", ",", 
+   "8", ",", "14", ",", "10", ",", "15", ",", "18", ",", "7", ",", "1", ",", 
+   "10", ",", "7", ",", "6", ",", "11", ",", "5", ",", "4"}], "}"}]], "Output",
+ Editable->False,
+ CellChangeTimes->{{3.7944844530863185`*^9, 3.794484469517028*^9}, 
+   3.79448551278088*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"26ec2d7a-b554-4271-bfeb-abfad8784a0e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mergeSort", "@", "test", " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:0421\:043e\:0440\:0442\:0438\:0440\:043e\:0432\:043a\:0430", " ", 
+    "\:0441\:043b\:0438\:044f\:043d\:0438\:0435\:043c"}], "*)"}]}]], "Input",
+ Editable->False,
+ CellChangeTimes->{{3.7944841862077723`*^9, 3.7944842090486608`*^9}, {
+  3.7944844083017364`*^9, 3.7944844099836683`*^9}, {3.794484456475192*^9, 
+  3.794484458951657*^9}, {3.794485116592082*^9, 3.794485125164127*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"c2c3c72a-d3d7-4a42-a4e7-ffbe9eaf01d7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "2", ",", "4", ",", "5", ",", "6", ",", "7", ",", "7", 
+   ",", "8", ",", "10", ",", "10", ",", "10", ",", "11", ",", "11", ",", "14",
+    ",", "14", ",", "15", ",", "18", ",", "18", ",", "19"}], "}"}]], "Output",
+ Editable->False,
+ CellChangeTimes->{
+  3.7944842242434936`*^9, 3.7944844246646767`*^9, {3.7944844598966875`*^9, 
+   3.794484470568796*^9}, 3.7944855136006804`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"7eee9924-f99a-4df2-9fde-1eeeece5fc1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"subsetsR", "[", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}], "]"}], "//", "Column", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:0413\:0435\:043d\:0435\:0440\:0438\:0440\:0443\:0435\:0442", " ", 
+    "\:043f\:043e\:0434\:043c\:043d\:043e\:0436\:0435\:0442\:0441\:0432\:0430\
+", " ", "\:0432", " ", "\:043e\:0431\:0440\:0430\:0442\:043d\:043e\:043c", 
+    " ", "\:0431\:0438\:043d\:0430\:0440\:043d\:043e\:043c", " ", 
+    "\:043f\:043e\:0440\:044f\:0434\:043a\:0435"}], "*)"}]}]], "Input",
+ Editable->False,
+ CellChangeTimes->{{3.7944844339713306`*^9, 3.7944844348153763`*^9}, {
+  3.7944844837756863`*^9, 3.7944845133448677`*^9}, {3.794485126666109*^9, 
+  3.7944851680096545`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"38be1d8e-023d-4ce2-965a-009e52f4dc8d"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", "}"}]},
+    {
+     RowBox[{"{", "a", "}"}]},
+    {
+     RowBox[{"{", "b", "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}]},
+    {
+     RowBox[{"{", "c", "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"a", ",", "c"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"b", ",", "c"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", "c"}], "}"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ Editable->False,
+ CellChangeTimes->{{3.7944845088478365`*^9, 3.7944845136378193`*^9}, 
+   3.7944855150627728`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"117b09ae-092f-413e-bc09-b332d0604745"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+SpellingDictionaries->{"CorrectWords"->{"Wolfram"}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 541, 11, 96, "Title",ExpressionUUID->"9ff4c3f5-0877-44c0-acf1-626877f58c78"],
+Cell[CellGroupData[{
+Cell[1146, 37, 238, 5, 67, "Section",ExpressionUUID->"e96c23e1-9a35-4176-b06a-02a38cbfc298"],
+Cell[1387, 44, 1129, 18, 34, "Text",ExpressionUUID->"dc689706-e95a-4bd8-b26a-751bdd5a7cd4"],
+Cell[2519, 64, 343, 6, 28, "Input",ExpressionUUID->"6027a1f0-1f22-4408-95a8-43ba2ed93ad6"],
+Cell[2865, 72, 857, 18, 56, "Text",ExpressionUUID->"86c96de8-4205-4f86-a405-1d215aba3db4"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3759, 95, 329, 6, 53, "Section",ExpressionUUID->"d2135de0-6608-40c2-9d41-3707cab8b492"],
+Cell[CellGroupData[{
+Cell[4113, 105, 257, 5, 28, "Input",ExpressionUUID->"db349ee3-61cc-4253-8926-a29b32bd0583"],
+Cell[4373, 112, 17563, 394, 149, "Output",ExpressionUUID->"ec6f3f3c-6dd7-41d7-a790-d28159de4eb3"]
+}, Open  ]],
+Cell[21951, 509, 627, 10, 34, "Text",ExpressionUUID->"97a2191d-28fa-431e-babc-988b76a97b04"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[22615, 524, 310, 6, 53, "Section",ExpressionUUID->"d42cbd33-c490-44a5-97d8-9fdcb993b0fc"],
+Cell[CellGroupData[{
+Cell[22950, 534, 444, 10, 45, "Input",ExpressionUUID->"1bdf7c09-afd8-4053-a947-03624a598c4b"],
+Cell[23397, 546, 464, 9, 32, "Output",ExpressionUUID->"26ec2d7a-b554-4271-bfeb-abfad8784a0e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23898, 560, 548, 10, 28, "Input",ExpressionUUID->"c2c3c72a-d3d7-4a42-a4e7-ffbe9eaf01d7"],
+Cell[24449, 572, 518, 10, 32, "Output",ExpressionUUID->"7eee9924-f99a-4df2-9fde-1eeeece5fc1c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25004, 587, 804, 16, 45, "Input",ExpressionUUID->"38be1d8e-023d-4ce2-965a-009e52f4dc8d"],
+Cell[25811, 605, 816, 30, 150, "Output",ExpressionUUID->"117b09ae-092f-413e-bc09-b332d0604745"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
