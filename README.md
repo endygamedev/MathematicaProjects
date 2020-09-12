@@ -1,4 +1,4 @@
-# Mathematica Projects
-Wolfram Mathematica Projects.
+# Обитель проектов на Wolfram Mathematica
 
-Mathematica Package - "BasicAlgorithmsPackage`" - last update 29.03.2020
+Пакет Wolfram Mathematica - "BasicAlgorithmsPackage`" - last update 29.03.2020 <br/>
+Игра: "Угадай фигуру" - "Game - Guess the object.nb "
