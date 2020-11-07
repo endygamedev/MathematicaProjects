@@ -1,4 +1,4 @@
-# ➕ Обитель проектов на Wolfram Mathematica
+# Ⓜ️ Обитель проектов на Wolfram Mathematica
 
 ## Содержимое
 1. Пакет Wolfram Mathematica — `BasicAlgorithmsPackage` <sub> (последнее обновление 29.03.2020) </sub> <br>
