@@ -1,4 +1,6 @@
 # ➕ Обитель проектов на Wolfram Mathematica
 
-Пакет Wolfram Mathematica - "BasicAlgorithmsPackage`" - последнее обновление 29.03.2020 <br/>
-Игра "Угадай фигуру" - "Game - Guess the object.nb "
+## Содержимое
+1. Пакет Wolfram Mathematica — `BasicAlgorithmsPackage` <sub> (последнее обновление 29.03.2020) </sub> <br>
+2. Игра «Угадай фигуру» — `Game - Guess the object.nb` <br>
+3. Курсовая работа «Моделирование заблокированной полосы на автостраде» — `Бронников Егор ПМ-1901 Курсовая работа` <sub> (1 курс 2 семестр) </sub>
